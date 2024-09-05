@@ -1,0 +1,62 @@
+.container {
+	width: 100%;
+}
+
+.buttons {
+	margin-bottom: 20px;
+}
+
+button {
+	margin-right: 10px;
+	padding: 10px 20px;
+	font-size: 16px;
+}
+
+.square-list {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	flex-wrap: nowrap;
+	overflow-x: hidden;
+	contain: layout paint;
+}
+
+.square {
+	width: 20%;
+	padding-bottom: 20%;
+	background-color: red;
+	transform: translateX(0);
+	transition: transform 0.3s ease-out;
+	will-change: transform;
+}
+
+.square-enter {
+	transform: translateX(-100%);
+}
+
+.square-enter-active {
+	transform: translateX(0);
+	transition: transform 0.3s ease-out;
+}
+
+.square-exit {
+	transform: translateX(0);
+}
+
+.square-exit-active {
+	transform: translateX(100%);
+	transition: transform 0.3s ease-in;
+}
+
+@keyframes shift-right {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(20%);
+	}
+}
+
+.shift {
+	animation: shift-right 0.3s ease-out;
+}
